@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript">
+	$.ajax({
+		url:"http://localhost:3000/gx",
+		type:"POST",
+		data:{message:req.body.message,name:req.body.name},
+		success:function(e){
+			$('body').append('<div>'+e.data+'</div>')
+		}
+	})
+	
+	
+	
+	
+</script>
+	</head>
+	<body>
+	<form action="http://localhost:3000/gx" method="POST">
+		<input type="text" name="message">
+		<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+	</body>
+	
+</html>
